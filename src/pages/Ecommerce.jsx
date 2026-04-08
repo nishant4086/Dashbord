@@ -145,37 +145,37 @@ const Ecommerce = () => {
         </div>
       </div>
 
-      <div className="flex gap-10 m-4 flex-wrap justify-center">
-        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg p-6 rounded-2xl">
-          <div className="flex justify-between items-center gap-2 flex-col sm:flex-row">
-            <p className="text-lg sm:text-xl font-semibold">Recent Transactions</p>
+      <div className="flex gap-2 sm:gap-4 md:gap-6 lg:gap-10 m-2 sm:m-3 md:m-4 flex-wrap justify-center">
+        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg p-4 sm:p-5 md:p-6 lg:p-8 rounded-2xl w-full sm:w-96 md:w-auto lg:w-auto">
+          <div className="flex justify-between items-center gap-1 sm:gap-2 flex-col sm:flex-row">
+            <p className="text-base sm:text-lg md:text-xl font-semibold">Recent Transactions</p>
             <DropDown currentMode={currentMode} />
           </div>
-          <div className="mt-6 sm:mt-10 w-full sm:w-72 md:w-400">
+          <div className="mt-4 sm:mt-6 md:mt-10 w-full min-w-fit">
             {recentTransactions.map((item) => (
-              <div key={item.title} className="flex justify-between mt-3 sm:mt-4">
-                <div className="flex gap-2 sm:gap-4">
+              <div key={item.title} className="flex justify-between mt-2 sm:mt-3 md:mt-4">
+                <div className="flex gap-2 sm:gap-3 md:gap-4">
                   <button
                     type="button"
                     style={{
                       color: item.iconColor,
                       backgroundColor: item.iconBg,
                     }}
-                    className="text-lg sm:text-2xl rounded-lg p-2 sm:p-4 hover:drop-shadow-xl"
+                    className="text-base sm:text-lg md:text-2xl rounded-lg p-1.5 sm:p-2 md:p-4 hover:drop-shadow-xl flex-shrink-0"
                   >
                     {item.icon}
                   </button>
-                  <div>
-                    <p className="text-sm sm:text-md font-semibold">{item.title}</p>
-                    <p className="text-xs sm:text-sm text-gray-400">{item.desc}</p>
+                  <div className="min-w-0">
+                    <p className="text-xs sm:text-sm md:text-md font-semibold truncate">{item.title}</p>
+                    <p className="text-xs text-gray-400 truncate">{item.desc}</p>
                   </div>
                 </div>
-                <p className={`text-${item.pcColor} text-sm sm:text-md`}>{item.amount}</p>
+                <p className={`text-${item.pcColor} text-xs sm:text-sm md:text-md whitespace-nowrap ml-2`}>{item.amount}</p>
               </div>
             ))}
           </div>
-          <div className="flex justify-between items-center mt-3 sm:mt-5 border-t-1 border-color">
-            <div className="mt-2 sm:mt-3">
+          <div className="flex justify-between items-center mt-3 sm:mt-4 md:mt-5 border-t-1 border-color pt-2 sm:pt-3">
+            <div className="mt-1 sm:mt-2 md:mt-3">
               <Button
                 color="white"
                 bgColor={currentColor}
@@ -184,99 +184,98 @@ const Ecommerce = () => {
               />
             </div>
 
-            <p className="text-gray-400 text-xs sm:text-sm">36 Recent Transactions</p>
+            <p className="text-gray-400 text-xs sm:text-sm">36 Recent</p>
           </div>
         </div>
-        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg p-4 sm:p-6 rounded-2xl w-full sm:w-96 md:w-760">
-          <div className="flex justify-between items-center gap-2 mb-6 sm:mb-10 flex-col sm:flex-row">
-            <p className="text-lg sm:text-xl font-semibold">Sales Overview</p>
+        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg p-3 sm:p-4 md:p-6 lg:p-8 rounded-2xl w-full sm:w-96 md:w-auto lg:w-auto overflow-x-auto">
+          <div className="flex justify-between items-center gap-1 sm:gap-2 mb-4 sm:mb-6 md:mb-8 lg:mb-10 flex-col xs:flex-row">
+            <p className="text-base sm:text-lg md:text-xl font-semibold whitespace-nowrap">Sales Overview</p>
             <DropDown currentMode={currentMode} />
           </div>
-          <div className="md:w-full overflow-auto">
+          <div className="min-w-full w-auto">
             <LineChart />
           </div>
         </div>
-      </div>
 
-      <div className="flex flex-wrap justify-center gap-2 md:gap-3">
-        <div className="w-full sm:w-96 md:w-400 bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl p-4 sm:p-6 m-2 md:m-3">
-          <div className="flex justify-between">
-            <p className="text-lg sm:text-xl font-semibold">Weekly Stats</p>
-            <button type="button" className="text-lg sm:text-xl font-semibold text-gray-500">
+      <div className="flex gap-2 sm:gap-4 md:gap-6 lg:gap-10 m-2 sm:m-3 md:m-4 lg:m-6 flex-wrap justify-center pb-10">
+        <div className="w-full xs:w-96 sm:w-96 md:w-auto lg:w-auto bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl p-4 sm:p-5 md:p-6 lg:p-8">
+          <div className="flex justify-between items-center">
+            <p className="text-base sm:text-lg md:text-xl font-semibold">Weekly Stats</p>
+            <button type="button" className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-500">
               <IoIosMore />
             </button>
           </div>
 
-          <div className="mt-6 sm:mt-10">
+          <div className="mt-4 sm:mt-6 md:mt-8 lg:mt-10">
             {weeklyStats.map((item) => (
-              <div key={item.title} className="flex justify-between mt-3 sm:mt-4 w-full">
-                <div className="flex gap-2 sm:gap-4">
+              <div key={item.title} className="flex justify-between mt-2 sm:mt-3 md:mt-4 w-full">
+                <div className="flex gap-2 sm:gap-3 md:gap-4 min-w-0">
                   <button
                     type="button"
                     style={{ background: item.iconBg }}
-                    className="text-lg sm:text-2xl hover:drop-shadow-xl text-white rounded-full p-2 sm:p-3"
+                    className="text-base sm:text-lg md:text-2xl hover:drop-shadow-xl text-white rounded-full p-1.5 sm:p-2 md:p-3 lg:p-4 flex-shrink-0"
                   >
                     {item.icon}
                   </button>
-                  <div>
-                    <p className="text-sm sm:text-md font-semibold">{item.title}</p>
-                    <p className="text-xs sm:text-sm text-gray-400">{item.desc}</p>
+                  <div className="min-w-0">
+                    <p className="text-xs sm:text-sm md:text-md font-semibold truncate">{item.title}</p>
+                    <p className="text-xs text-gray-400 truncate">{item.desc}</p>
                   </div>
                 </div>
 
-                <p className={`text-${item.pcColor} text-sm sm:text-md`}>{item.amount}</p>
+                <p className={`text-${item.pcColor} text-xs sm:text-sm md:text-md whitespace-nowrap ml-2`}>{item.amount}</p>
               </div>
             ))}
-            <div className="mt-4">
+            <div className="mt-4 sm:mt-6 md:mt-8">
               <SparkLine currentColor={currentColor} id="area-sparkLine" height="160px" type="Area" data={SparklineAreaData} width="280" color="rgb(242, 252, 253)" />
             </div>
           </div>
 
         </div>
-        <div className="w-full sm:w-96 md:w-400 bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl p-4 sm:p-6 m-2 md:m-3">
-          <div className="flex justify-between">
-            <p className="text-lg sm:text-xl font-semibold">MedicalPro Branding</p>
-            <button type="button" className="text-lg sm:text-xl font-semibold text-gray-400">
+        <div className="w-full sm:w-96 md:w-auto lg:w-auto bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl p-4 sm:p-5 md:p-6 lg:p-8">
+          <div className="flex justify-between items-center">
+            <p className="text-base sm:text-lg md:text-xl font-semibold">MedicalPro Branding</p>
+            <button type="button" className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-400">
               <IoIosMore />
             </button>
           </div>
-          <p className="text-xs cursor-pointer hover:drop-shadow-xl font-semibold rounded-lg w-24 bg-orange-400 py-0.5 px-2 text-gray-200 mt-6 sm:mt-10">
+          <p className="text-xs cursor-pointer hover:drop-shadow-xl font-semibold rounded-lg w-24 bg-orange-400 py-0.5 px-2 text-gray-200 mt-4 sm:mt-6 md:mt-8 lg:mt-10">
             16 APR, 2021
           </p>
 
-          <div className="flex gap-2 sm:gap-4 border-b-1 border-color mt-4 sm:mt-6">
+          <div className="flex gap-2 sm:gap-3 md:gap-4 border-b-1 border-color mt-3 sm:mt-4 md:mt-6 pb-3 sm:pb-4 overflow-x-auto">
             {medicalproBranding.data.map((item) => (
-              <div key={item.title} className="border-r-1 border-color pr-2 sm:pr-4 pb-2">
-                <p className="text-xs text-gray-400">{item.title}</p>
-                <p className="text-sm">{item.desc}</p>
+              <div key={item.title} className="border-r-1 border-color pr-2 sm:pr-3 md:pr-4 pb-2 flex-shrink-0">
+                <p className="text-xs text-gray-400 whitespace-nowrap">{item.title}</p>
+                <p className="text-xs sm:text-sm font-semibold mt-1">{item.desc}</p>
               </div>
             ))}
           </div>
-          <div className="border-b-1 border-color pb-4 mt-2">
-            <p className="text-md font-semibold mb-2">Teams</p>
+          <div className="border-b-1 border-color pb-3 sm:pb-4 mt-3 sm:mt-4 md:mt-6">
+            <p className="text-xs sm:text-sm font-semibold mb-2">Teams</p>
 
-            <div className="flex gap-4">
+            <div className="flex gap-2 sm:gap-3 md:gap-4 flex-wrap">
               {medicalproBranding.teams.map((item) => (
                 <p
                   key={item.name}
                   style={{ background: item.color }}
-                  className="cursor-pointer hover:drop-shadow-xl text-white py-0.5 px-3 rounded-lg text-xs"
+                  className="cursor-pointer hover:drop-shadow-xl text-white py-0.5 px-2 sm:px-3 rounded-lg text-xs"
                 >
                   {item.name}
                 </p>
               ))}
             </div>
           </div>
-          <div className="mt-2">
-            <p className="text-md font-semibold mb-2">Leaders</p>
-            <div className="flex gap-4">
+          <div className="mt-2 sm:mt-3 md:mt-4">
+            <p className="text-xs sm:text-sm font-semibold mb-2">Leaders</p>
+            <div className="flex gap-2 sm:gap-3 md:gap-4">
               {medicalproBranding.leaders.map((item, index) => (
-                <img key={index} className="rounded-full w-8 h-8" src={item.image} alt="" />
+                <img key={index} className="rounded-full w-6 h-6 sm:w-8 sm:h-8" src={item.image} alt="" />
               ))}
             </div>
           </div>
-          <div className="flex justify-between items-center mt-5 border-t-1 border-color">
-            <div className="mt-3">
+          <div className="flex justify-between items-center mt-3 sm:mt-4 md:mt-5 border-t-1 border-color pt-2 sm:pt-3">
+            <div className="mt-1 sm:mt-2 md:mt-3">
               <Button
                 color="white"
                 bgColor={currentColor}
@@ -285,30 +284,30 @@ const Ecommerce = () => {
               />
             </div>
 
-            <p className="text-gray-400 text-sm">36 Recent Transactions</p>
+            <p className="text-gray-400 text-xs sm:text-sm">36 Recent</p>
           </div>
         </div>
-        <div className="w-400 bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl p-6 m-3">
-          <div className="flex justify-between">
-            <p className="text-xl font-semibold">Daily Activities</p>
-            <button type="button" className="text-xl font-semibold text-gray-500">
+        <div className="w-full xs:w-96 sm:w-96 md:w-auto lg:w-auto bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl p-4 sm:p-5 md:p-6 lg:p-8">
+          <div className="flex justify-between items-center">
+            <p className="text-base sm:text-lg md:text-xl font-semibold">Daily Activities</p>
+            <button type="button" className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-500">
               <IoIosMore />
             </button>
           </div>
-          <div className="mt-10">
+          <div className="mt-4 sm:mt-6 md:mt-8 lg:mt-10">
             <img
-              className="md:w-96 h-50 "
+              className="w-full sm:w-80 md:w-96 h-auto rounded-lg"
               src={product9}
-              alt=""
+              alt="Daily Activity"
             />
-            <div className="mt-8">
-              <p className="font-semibold text-lg">React 18 coming soon!</p>
-              <p className="text-gray-400 ">By Johnathan Doe</p>
-              <p className="mt-8 text-sm text-gray-400">
+            <div className="mt-4 sm:mt-6 md:mt-8">
+              <p className="font-semibold text-base sm:text-lg">React 18 coming soon!</p>
+              <p className="text-xs sm:text-sm text-gray-400">By Johnathan Doe</p>
+              <p className="mt-3 sm:mt-4 md:mt-6 text-xs sm:text-sm text-gray-400">
                 This will be the small description for the news you have shown
                 here. There could be some great info.
               </p>
-              <div className="mt-3">
+              <div className="mt-2 sm:mt-3 md:mt-4">
                 <Button
                   color="white"
                   bgColor={currentColor}
