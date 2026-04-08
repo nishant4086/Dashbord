@@ -1,0 +1,60 @@
+UI/UX ISSUES - SIDEBAR ACTIVE
+===============================
+
+Overview:
+This document describes user interface and user experience issues that may occur when the sidebar is in an active/expanded state.
+
+Issue Categories:
+
+1. VISUAL APPEARANCE ISSUES
+   - Sidebar Width: Content text overflows or gets cut off
+   - Icon Display: Icons not properly aligned or scaled
+   - Color Contrast: Text colors become unreadable against background
+   - Border/Shadow: Inconsistent styling or missing shadows/borders
+   - Font Rendering: Text appears blurry or misaligned
+
+2. LAYOUT AND SPACING ISSUES
+   - Content Squishing: Main content area becomes too narrow
+   - Horizontal Scrollbar: Unwanted scrollbar appears
+   - Padding/Margin: Inconsistent spacing between elements
+   - Item Alignment: Menu items not vertically centered
+   - Responsive Break: Layout looks broken on certain screen sizes
+
+3. INTERACTIVE ELEMENT ISSUES
+   - Button Clipping: Action buttons cut off by sidebar
+   - Hover States: Hover effects not visible or working
+   - Click Areas: Clickable regions smaller than expected
+   - Tooltips: Tooltips hidden behind sidebar
+   - Dropdown Menus: Menus positioned incorrectly
+
+4. TEXT AND TYPOGRAPHY ISSUES
+   - Label Truncation: Menu labels cut off with ellipsis
+   - Font Size: Text too small/large to read comfortably
+   - Line Height: Items appear too cramped or spaced out
+   - Text Overflow: Long text wraps unexpectedly
+   - Multi-line Items: Labels span multiple lines awkwardly
+
+5. ANIMATION AND TRANSITION ISSUES
+   - Jerky Animation: Sidebar expansion/collapse stutters
+   - Slow Transition: Animation takes too long
+   - Content Jump: Main content "jumps" when sidebar expands
+   - Flicker: Content flashes or flickers during transition
+   - Reverse Animation: Collapse animation doesn't match expand
+
+6. NAVIGATION AND USABILITY ISSUES
+   - Unclear Active State: Current page not properly highlighted
+   - Missing Visual Feedback: No indication sidebar is expanded
+   - Navigation Labels: Menu items difficult to distinguish
+   - Scroll Visibility: Menu items hidden when scrolling
+   - Focus Indicator: Keyboard focus not clearly visible
+
+7. NOTIFICATION/BADGE ISSUES
+   - Badge Overlap: Notification badges overlap with text
+   - Badge Position: Badges not properly aligned
+   - Counter Display: Badge numbers cut off or misaligned
+
+8. MOBILE/TOUCH ISSUES
+   - Sidebar Too Wide: Takes up too much screen space on mobile
+   - Touch Targets: Menu items too small to tap accurately
+   - Overlay Transparency: Overlay backdrop too dark/light
+   - Gesture Conflicts: Swipe gestures interfere with navigation

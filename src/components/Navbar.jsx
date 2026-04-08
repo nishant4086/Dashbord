@@ -41,7 +41,7 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    if (screenSize <= 900) {
+    if (screenSize <= 768) {
       setActiveMenu(false);
     } else {
       setActiveMenu(true);
@@ -51,30 +51,30 @@ const Navbar = () => {
   const handleActiveMenu = () => setActiveMenu(!activeMenu);
 
   return (
-    <div className="flex justify-between p-2 md:ml-6 md:mr-6 relative">
+    <div className="flex justify-between p-2 sm:p-3 md:ml-4 lg:ml-6 md:mr-4 lg:mr-6 relative">
 
       <NavButton title="Menu" customFunc={handleActiveMenu} color={currentColor} icon={<AiOutlineMenu />} />
-      <div className="flex">
+      <div className="flex items-center gap-1 sm:gap-2">
         <NavButton title="Cart" customFunc={() => handleClick('cart')} color={currentColor} icon={<FiShoppingCart />} />
         <NavButton title="Chat" dotColor="#03C9D7" customFunc={() => handleClick('chat')} color={currentColor} icon={<BsChatLeft />} />
         <NavButton title="Notification" dotColor="rgb(254, 201, 15)" customFunc={() => handleClick('notification')} color={currentColor} icon={<RiNotification3Line />} />
         <TooltipComponent content="Profile" position="BottomCenter">
           <div
-            className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
+            className="flex items-center gap-1 sm:gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
             onClick={() => handleClick('userProfile')}
           >
             <img
-              className="rounded-full w-8 h-8"
+              className="rounded-full w-7 h-7 sm:w-8 sm:h-8"
               src={avatar}
               alt="user-profile"
             />
-            <p>
-              <span className="text-gray-400 text-14">Hi,</span>{' '}
-              <span className="text-gray-400 font-bold ml-1 text-14">
+            <p className="hidden sm:block">
+              <span className="text-gray-400 text-12 sm:text-14">Hi,</span>{' '}
+              <span className="text-gray-400 font-bold ml-1 text-12 sm:text-14">
                 Michael
               </span>
             </p>
-            <MdKeyboardArrowDown className="text-gray-400 text-14" />
+            <MdKeyboardArrowDown className="hidden sm:block text-gray-400 text-14" />
           </div>
         </TooltipComponent>
 
